@@ -2,9 +2,6 @@
 
 :root {
   color-scheme: light;
-  /* Green UI palette (#051F20 → #DAF1DE) — a single-hue ramp. Every accent, hover
-     tint, border, and animation in this file draws from these six stops only —
-     no other hue is introduced anywhere, including the "danger" state. */
   --background: #ede8e8;
   --foreground: #171114;
   --pink-1: #eddce2;
@@ -13,7 +10,7 @@
   --pink-4: #bf6385;
   --pink-5: #a54e70;
   --pink-6: #762f49;
-  /* Light→dark sweeps used for animated/hover surfaces (buttons, ribbons, rings). */
+
   --gradient-pink: linear-gradient(
     135deg,
     var(--pink-2),
@@ -35,8 +32,6 @@
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-serif);
   --color-primary-dark: var(--pink-6);
-  /* Reading-status colors, reused as the app's only accents (Section: status chips,
-     shelf-card ribbon, focus rings, links) — each a distinct step in the green ramp. */
   --color-gold: var(--pink-2);
   --color-accent: var(--pink-4);
   --color-forest: var(--pink-5);
@@ -101,9 +96,6 @@ body {
   }
 }
 
-/* Heading treatment — stronger ink than body text (color-mixed toward the
-   darkest green step) plus a soft glow so serif titles read clearly against
-   any card/background tone, with a gentle rise-in and a hand-drawn underline. */
 .heading {
   position: relative;
   display: inline-block;
@@ -136,9 +128,6 @@ body {
     transform: scaleX(1);
   }
 }
-
-/* Status tags — squared "card catalog" labels rather than soft pill badges;
-   each reading status keeps its own distinct step of the green ramp. */
 .status-chip {
   display: inline-flex;
   align-items: center;
@@ -178,9 +167,6 @@ body {
   animation: pulse-dot 2.2s ease-in-out infinite;
 }
 
-/* "Shelf card" hover treatment — a bookmark-ribbon left edge grows in on hover,
-   painted as a light→dark sweep of the green ramp (top lightest, bottom darkest)
-   instead of a flat accent bar. Lift stays a small, calm 3px. */
 .shelf-card {
   position: relative;
   isolation: isolate;
@@ -249,8 +235,6 @@ body {
   );
 }
 
-/* Gradient ring — a light→dark green border for the small brand/icon circles
-   (AuthCard, Sidebar, Navbar) instead of a flat single-tone outline. */
 .ring-pink-sweep {
   border: 2px solid transparent;
   border-radius: 9999px;

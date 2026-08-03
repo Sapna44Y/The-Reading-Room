@@ -10,8 +10,6 @@ export function useBooks(filters?: BookFilters) {
   });
 }
 
-// The backend exposes no GET /books/:id — the edit page reuses the unfiltered
-// list query (cache-first if the user came from /books, fetched fresh otherwise).
 export function useBook(id: string) {
   const { data: books, ...rest } = useBooks();
   return { ...rest, data: books?.find((book) => book.id === id) };

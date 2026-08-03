@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { href: ROUTES.books, label: "Books" },
 ];
 
-/** Mobile-only top bar — the Sidebar carries navigation at md+ (see AppShell). */
+/** Mobile-only top bar — the Sidebar carries. */
 export function Navbar() {
   const { user, logout } = useAuth();
   const pathname = usePathname();

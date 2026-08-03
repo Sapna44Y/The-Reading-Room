@@ -47,14 +47,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     document.cookie = "session=1; path=/; samesite=lax";
   }, []);
 
-  // `isLoading` starts true and only flips once, here, on mount. AppShell's redirect
-  // effect is a child of this provider, so React always runs it before this effect on
-  // the first commit — gating on `isLoading` is what stops it from redirecting an
-  // authenticated user before sessionStorage has actually been read. (A prior version
-  // used useSyncExternalStore to read sessionStorage without this effect, on the theory
-  // that its resync was hydration-safe; in practice the resync still lands after
-  // AppShell's own effect, so it redirected real sessions to /login on every hard
-  // reload of a protected route. Verified against the running app before reverting.)
   useEffect(() => {
     setUnauthorizedHandler(logout);
     const raw = sessionStorage.getItem(SESSION_STORAGE_KEY);
