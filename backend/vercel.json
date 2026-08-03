@@ -1,16 +1,4 @@
 {
   "version": 2,
-  "name": "Thembstack",
-  "builds": [
-    {
-      "src": "./src/server.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
 }
