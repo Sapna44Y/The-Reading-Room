@@ -32,7 +32,6 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import { CORS_ORIGIN } from "./config/env.js";
-
 import {
   notFoundHandler,
   errorHandler,
@@ -55,9 +54,9 @@ app.use(
 
 app.use(express.json());
 
-app.use("/api/auth", authRoutes);
-app.use("/api/books", bookRoutes);
-app.use("/api/dashboard", dashboardRoutes);
+app.use("/auth", authRoutes);
+app.use("/books", bookRoutes);
+app.use("/dashboard", dashboardRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
