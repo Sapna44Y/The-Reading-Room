@@ -56,4 +56,7 @@ app.use("/dashboard", dashboardRoutes);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
+app.get("/", (req, res) => {
+  res.json({ success: true, message: "ThumbStack API is running" });
+});
 export default app;
